@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="125dp"
         android:layout_height="100dp"
-        android:src="@drawable/as1"
+        android:src="@drawable/as1.png"
         android:scaleType="centerCrop"/>
 
     <LinearLayout

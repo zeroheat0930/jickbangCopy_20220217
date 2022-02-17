@@ -1,5 +1,6 @@
 package com.zeroheat.jickbangcopy_20220217
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.zeroheat.jickbangcopy_20220217.adapters.RoomAdapter
@@ -36,5 +37,16 @@ class MainActivity : AppCompatActivity() {
 //mcontext는 어떤화면인가? ,resId는 res폴더중에 어느걸꺼내다 쓸껀지 , 어레이 리스트는 엠 룸 리스트
         mRoomAdapter = RoomAdapter(this, R.layout.room_list_item, mRoomList)
         jicbangListView.adapter = mRoomAdapter
+
+        jicbangListView.setOnItemClickListener { parent, view, position, id ->
+
+            val clickedRoom = mRoomList[position]
+
+            val myIntent = Intent(this, ViewRoomDetailActivity::class.java)
+            myIntent.putExtra("priceinfo", clickedRoom.getPrice())
+            startActivity(myIntent)
+
+
+        }
     }
 }

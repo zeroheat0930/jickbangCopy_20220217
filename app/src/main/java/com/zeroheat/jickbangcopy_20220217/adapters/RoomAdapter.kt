@@ -17,13 +17,13 @@ class RoomAdapter(val mContext: Context, val resId: Int, val mList: ArrayList<Ro
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
         var tempRow = convertView
+
         if(tempRow == null) {
+            //아래 null 은 부가정보가 없다는거
             tempRow = LayoutInflater.from(mContext).inflate(R.layout.room_list_item, null)
         }
 
         val row = tempRow!!
-
-        val data = mList[position]
 
 
         return row

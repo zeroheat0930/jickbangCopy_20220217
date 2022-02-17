@@ -1,5 +1,6 @@
 package com.zeroheat.jickbangcopy_20220217.datas
 
+import java.io.Serializable
 import java.text.NumberFormat
 import java.util.*
 
@@ -8,7 +9,7 @@ class RoomData (
     val address : String,
     val floor: Int,
     val description: String,
-    ){
+    ) : Serializable{
         fun getFloor() : String{
             if(this.floor >0){
                 return "${this.floor}층"

@@ -26,6 +26,11 @@ class RoomAdapter(val mContext: Context, val resId: Int, val mList: ArrayList<Ro
         val row = tempRow!!
 
 
+
+        val data =mList
+
+
+
         return row
     }
 }

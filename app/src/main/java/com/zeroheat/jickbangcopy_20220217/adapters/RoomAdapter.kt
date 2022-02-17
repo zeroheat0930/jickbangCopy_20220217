@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import com.zeroheat.jickbangcopy_20220217.R
 import com.zeroheat.jickbangcopy_20220217.datas.RoomData
 
@@ -27,7 +28,23 @@ class RoomAdapter(val mContext: Context, val resId: Int, val mList: ArrayList<Ro
 
 
 
-        val data =mList
+        val data = mList[position]
+
+        val txtContents = row.findViewById<TextView>(R.id.txtContents)
+
+        val txtmiddle = row.findViewById<TextView>(R.id.txtAddress)
+
+
+        val txtPrice = row.findViewById<TextView>(R.id.txtPrice)
+
+
+        txtContents.text = data.description
+        txtmiddle.text = "${data.address},${data.getFloor()}"
+        txtPrice.text = data.getPrice()
+
+//
+//        txtAge.text = "(${data.getKoreaAge(2022)}세)"
+
 
 
 
